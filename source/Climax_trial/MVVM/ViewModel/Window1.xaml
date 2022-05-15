@@ -1,0 +1,54 @@
+﻿<Window x:Class="Climax_trial.MVVM.ViewModel.Window1"
+xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Climax_trial.MVVM.ViewModel"
+        mc:Ignorable="d"
+        Height="600" Width="920"
+        WindowStyle="None" 
+        ResizeMode="CanResize"
+        Background="Transparent"
+        AllowsTransparency="True">
+
+    <Border Background="#272537"
+        CornerRadius="20">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="75"/>
+                <RowDefinition/>
+
+            </Grid.RowDefinitions>
+
+            <TextBlock Text="Climax"
+                   VerticalAlignment="Top"
+                   HorizontalAlignment="Left"
+                   Foreground="GreenYellow"
+                   FontSize="26" Margin="26,13,0,0" RenderTransformOrigin="1.333,0.342"/>
+            <StackPanel Grid.Row="1">
+                <Label x:Name="Label" Content="Νέα Καταχώρηση" />
+                <TextBlock Text="Εισάγεται Επωνυμία" />
+
+                <TextBox  x:Name="MainTextBox" Width="200" Text=""  />
+                <TextBlock Text="Εισάγεται Νομική Μορφή "  />
+                <ComboBox Width="100" 
+                          HorizontalAlignment="Left" 
+                          SelectionChanged="ComboBox_SelectionChanged"
+                          ItemsSource="{Binding COMPANY_TYPES }"
+                          />
+            </StackPanel>
+
+
+
+        </Grid>
+
+
+    </Border>
+
+
+</Window>
+
