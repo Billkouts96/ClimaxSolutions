@@ -1,8 +1,4 @@
 # ClimaxSolutions
 
-This repository holds all relevant files with ClimaxSolution SW development
-
-ClimaxSolution is a product that hepls professionals in optimizing their pricing system and keeps statistics for economics things and progress.
-It is a desktop application(for the time being) that is build with .NET Core (C#) and WPF.
-
-Enjoy!
+This branch created for individual development. It contains slightly different logic from the main branch.
+Eventually will be merged with the mainline when it it mature enough.
