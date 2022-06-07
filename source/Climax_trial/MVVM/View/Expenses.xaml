@@ -1,0 +1,139 @@
+﻿<UserControl x:Class="Climax_trial.MVVM.View.Expenses"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Climax_trial.MVVM.View"
+             xmlns:view_model="clr-namespace:Climax_trial.MVVM.ViewModel"
+             xmlns:lvc="clr-namespace:LiveCharts.Wpf;assembly=LiveCharts.Wpf"
+             mc:Ignorable="d" 
+             d:DesignHeight="500" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <view_model:ExpensesViewModel/>
+    </UserControl.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="250"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <StackPanel Margin="0,0,6,0" >
+            <TextBlock Foreground="LightGreen" Margin="12,0,0,0" FontSize="14">
+                Κατηγορία Πάγιων Εξόδων</TextBlock>
+            <ComboBox
+                Foreground ="Black"
+                FontSize="14"
+                Width ="192"
+                Height ="41"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0"
+                ItemsSource="{Binding EXPENSES_CATEGORIES ,UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding Path=Name}"
+                />
+            <TextBlock Foreground="LightGreen" Margin="10,10,0,0" FontSize="14">
+                Τύπος Χρέωσης</TextBlock>
+            <ComboBox
+                Foreground ="Black"
+                FontSize="14"
+                Width ="189"
+                Height ="41"
+                HorizontalAlignment="Left"
+                Margin="10,0,0,0"
+                ItemsSource="{Binding EXPENSE_TYPE ,UpdateSourceTrigger=PropertyChanged}"
+                SelectedItem="{Binding Path=Type}"
+                />
+        </StackPanel>
+        <StackPanel Margin="260,0,240,0">
+            <TextBlock Foreground="LightGreen" Margin="0,0,0,0" FontSize="14">
+                Τιμή</TextBlock>
+            <TextBox 
+                Background="LightGray"
+                Width="180"
+                Height="10"
+                HorizontalAlignment="Left"
+                
+                >
+                <TextBox.Text>
+                    <Binding Path="Price" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
+
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+            <TextBlock Foreground="LightGreen" Margin="0,20,0,0" FontSize="14">
+                Αποφορολογητέο</TextBlock>
+            <TextBox 
+                Background="LightGray"
+                Width="180"
+                Height="10"
+                Margin="0,0,0,0"
+                HorizontalAlignment="Left"
+                >
+                <TextBox.Text>
+                    <Binding Path="TaxFree" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
+
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+        </StackPanel>
+
+        <StackPanel Margin="500,0,5,0">
+            <TextBlock Foreground="LightGreen" Margin="0,0,0,0" FontSize="14">
+                Συντελεστής ΦΠΑ</TextBlock>
+            <TextBox 
+                Background="LightGray"
+                Width="180"
+                Height="10"
+                HorizontalAlignment="Left"
+                >
+
+                <TextBox.Text>
+                    <Binding Path="Tax" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
+
+                    </Binding>
+                </TextBox.Text>
+            </TextBox>
+
+            <TextBlock Foreground="LightGreen" Margin="0,20,0,0" FontSize="14">
+               Επιστρεπτέο ΦΠΑ</TextBlock>
+            <TextBox 
+                Background="LightGray"
+                Width="180"
+                Height="10"
+                Margin="0,0,0,0"
+                HorizontalAlignment="Left"
+                >
+            </TextBox>
+
+
+        </StackPanel>
+        <StackPanel Margin="0,150,0,50">
+
+            <Button
+                Width="120"
+                Height="40"
+                Foreground="AliceBlue"
+                Content="Save"
+                Command="{Binding SaveExpense}"
+                
+                />
+
+
+        </StackPanel>
+
+       
+        <DockPanel HorizontalAlignment="Center" Grid.Row="2">
+            <lvc:PieChart LegendLocation="Bottom"
+                          Height="235"
+                          Margin="0 0 0 0"
+                          Hoverable="False" DataTooltip="{x:Null}"
+                          InnerRadius="50"
+                          Foreground="{DynamicResource MaterialDesignBody}"
+                          
+                          Series="{Binding ExpensesSeries}" Width="264"
+                          >
+            </lvc:PieChart>
+        </DockPanel>
+
+
+    </Grid>
+</UserControl>

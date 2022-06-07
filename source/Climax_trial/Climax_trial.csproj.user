@@ -7,7 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="MVVM\ViewModel\Window1.xaml.cs">
+    <Compile Update="MVVM\View\Dashboard.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\Expenses.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Update="MVVM\View\Incomes.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -15,10 +21,13 @@
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="MVVM\ViewModel\Window1.xaml">
+    <Page Update="MVVM\View\Dashboard.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="Theme\MenuButtonTheme.xaml">
+    <Page Update="MVVM\View\Expenses.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="MVVM\View\Incomes.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

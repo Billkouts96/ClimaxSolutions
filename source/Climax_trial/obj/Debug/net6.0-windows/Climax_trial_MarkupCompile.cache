@@ -10,11 +10,11 @@ none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
 C:\Users\billk\source\repos\Climax_trial\Climax_trial\App.xaml
-3341743320
+5-1857048233
 
-7-1772131793
-194-1951243044
-MainWindow.xaml;MVVM\ViewModel\Window1.xaml;Theme\MenuButtonTheme.xaml;
+181081979757
+219-1386300492
+MainWindow.xaml;MVVM\View\Dashboard.xaml;MVVM\View\Expenses.xaml;MVVM\View\Incomes.xaml;Theme\MenuButtonTheme.xaml;
 
-True
+False
 
