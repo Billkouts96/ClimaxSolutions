@@ -48,9 +48,9 @@
             <TextBox 
                 Background="LightGray"
                 Width="180"
-                Height="10"
+                Height="30"
                 HorizontalAlignment="Left"
-                
+               
                 >
                 <TextBox.Text>
                     <Binding Path="Price" Mode="TwoWay" UpdateSourceTrigger="PropertyChanged" ValidatesOnDataErrors="True">
@@ -64,7 +64,7 @@
             <TextBox 
                 Background="LightGray"
                 Width="180"
-                Height="10"
+                Height="30"
                 Margin="0,0,0,0"
                 HorizontalAlignment="Left"
                 >
@@ -82,7 +82,7 @@
             <TextBox 
                 Background="LightGray"
                 Width="180"
-                Height="10"
+                Height="30"
                 HorizontalAlignment="Left"
                 >
 
@@ -98,7 +98,7 @@
             <TextBox 
                 Background="LightGray"
                 Width="180"
-                Height="10"
+                Height="30"
                 Margin="0,0,0,0"
                 HorizontalAlignment="Left"
                 >

@@ -3,14 +3,13 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:wpfui="http://schemas.lepo.co/wpfui/2022/xaml"
         xmlns:vm="clr-namespace:Climax_trial.MVVM.ViewModel"
         xmlns:local="clr-namespace:Climax_trial"
         xmlns:pages="clr-namespace:Climax_trial.MVVM.View" 
         mc:Ignorable="d"
         Height="600" Width="920"
         WindowStyle="None" 
-        ResizeMode="CanResize"
+        ResizeMode="CanResizeWithGrip"
         Background="Transparent"
         AllowsTransparency="True">
 
@@ -37,51 +36,64 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
                 <RowDefinition Height="75"/>
                 <RowDefinition/>
                 
-            <!--Setting the minimize-maximize buttons (taken from wpfui project)-->
             </Grid.RowDefinitions>
-            <wpfui:TitleBar Grid.ColumnSpan="2" >
-                <wpfui:NotifyIcon
-                    FocusOnLeftClick="True"
-                    MenuOnRightClick="True"
-                    TooltipText="WPF UI">
-                    <wpfui:NotifyIcon.Menu>
-                        <ContextMenu>
-                            <MenuItem
-                                Click="TrayMenuItem_OnClick"
-                                Header="Home"
-                                Icon="{x:Static wpfui:SymbolRegular.Library28}"
-                                Tag="home" />
-                            <MenuItem
-                                Click="TrayMenuItem_OnClick"
-                                Header="Save"
-                                Icon="{x:Static wpfui:SymbolRegular.Save24}"
-                                Tag="save" />
-                            <MenuItem
-                                Click="TrayMenuItem_OnClick"
-                                Header="Open"
-                                Icon="{x:Static wpfui:SymbolRegular.Folder28}"
-                                Tag="open" />
-                            <Separator />
-                            <MenuItem
-                                Click="TrayMenuItem_OnClick"
-                                Header="Reload"
-                                Icon="{x:Static wpfui:SymbolRegular.ArrowClockwise24}"
-                                Tag="reload" />
-                        </ContextMenu>
-                    </wpfui:NotifyIcon.Menu>
-                </wpfui:NotifyIcon>
-            </wpfui:TitleBar>
-           
 
-            <TextBlock Text="Climax"
+            <Border 
+                Grid.ColumnSpan="2" 
+                Background="#2725"
+                MouseDown="Border_MouseDown">
+                <Grid>
+                    <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal" >
+                        <Button 
+                    Width="25" 
+                    Height="25"
+                    Content="_"
+                    Background="Transparent"
+                    Foreground="Gray"
+                    FontWeight="Bold"
+                    FontSize="15"
+                    BorderThickness="0"
+                    Click="Button_Minimized_Clicked"
+                    
+                    
+                        />
+                        <Button 
+                    Width="25" 
+                    Height="25"
+                    Content="□"
+                    Background="Transparent"
+                    Foreground="Gray"
+                    FontWeight="DemiBold"
+                     Margin="0,0,0,0"
+                     BorderThickness="0"
+                     Click="Button_Maximized_Clicked"
+                        />
+                        <Button 
+                    Width="25" 
+                    Height="25"
+                    Content="x"
+                    Background="Transparent"
+                    Foreground="Gray"
+                    FontWeight="DemiBold"
+                    Margin="0,0,10,0"
+                    BorderThickness="0"
+                     Click="Button_Closed_Clicked"
+                    
+                        />
+                    </StackPanel>
+                </Grid>
+            </Border>
+            
+            <TextBlock Text="Climax" Grid.Row="1"
                    VerticalAlignment="Top"
                    HorizontalAlignment="Left"
                    Foreground="GreenYellow"
                    FontSize="26" Margin="26,13,0,0" RenderTransformOrigin="1.333,0.342"/>
-            <StackPanel Grid.Row="1">
+            <StackPanel Grid.Row="2">
                 <RadioButton Content="Πίνακας Ελέγχου"
                              Height="50"
                              Foreground="WhiteSmoke"
@@ -123,7 +135,7 @@
             </StackPanel>
 
         
-            <ContentControl Grid.Row="1"
+            <ContentControl Grid.Row="2"
                                 Grid.Column="1"
                                 Margin="10"
                                 Content="{Binding CurrentView}"

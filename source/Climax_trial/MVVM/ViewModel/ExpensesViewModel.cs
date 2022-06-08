@@ -60,11 +60,12 @@ namespace Climax_trial.MVVM.ViewModel
                     service.AddExpense(_expense);
 
                     //return to default values all the affected fields
+                   
+                    OnPropertyChanged(nameof(Expense));
+                    OnPropertyChanged(nameof(ExpensesSeries));
                     _expense.Taxfree = 0;
                     _expense.Price = 0;
                     _expense.Tax = 0;
-                    OnPropertyChanged(nameof(Expense));
-                    OnPropertyChanged(nameof(ExpensesSeries));
                     OnPropertyChanged(nameof(Price));
                     OnPropertyChanged(nameof(TaxFree));
                     OnPropertyChanged(nameof(Tax));

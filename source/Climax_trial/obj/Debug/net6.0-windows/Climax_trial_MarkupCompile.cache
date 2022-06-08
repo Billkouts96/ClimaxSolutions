@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-C:\Users\billk\source\repos\Climax_trial\Climax_trial\obj\Debug\net6.0-windows\
+C:\Users\billk\OneDrive\Documents\GitHub\ClimaxSolutions\source\Climax_trial\obj\Debug\net6.0-windows\
 Climax_trial
 none
 false
 TRACE;DEBUG;NET;NET6_0;NETCOREAPP
-C:\Users\billk\source\repos\Climax_trial\Climax_trial\App.xaml
+C:\Users\billk\OneDrive\Documents\GitHub\ClimaxSolutions\source\Climax_trial\App.xaml
 5-1857048233
 
 181081979757
-219-1386300492
+217-147128845
 MainWindow.xaml;MVVM\View\Dashboard.xaml;MVVM\View\Expenses.xaml;MVVM\View\Incomes.xaml;Theme\MenuButtonTheme.xaml;
 
 False

@@ -24,10 +24,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\..\OneDrive\Documents\GitHub\wpfui\src\WPFUI\WPFUI.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="ClimaxFinance.db">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
