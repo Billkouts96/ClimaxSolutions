@@ -15,10 +15,7 @@ namespace Climax_trial.Services
         private static Service instance;
         private static ApplicationContext _db { get; set; }
 
-        #region Properties
-        
-        #endregion
-
+       
 
         private Service()
         {
@@ -69,7 +66,11 @@ namespace Climax_trial.Services
         public void AddExpense(Expenses Expense)
         {
             _db.Expenses.Add(Expense);
-            _db.SaveChanges();
+          // exception handling for annoying " unique contraint error sqlite" to be solved when fuly undrestood
+
+          _db.SaveChanges();
+            
+           
         }
         
 

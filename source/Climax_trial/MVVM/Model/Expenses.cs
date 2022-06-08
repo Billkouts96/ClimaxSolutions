@@ -8,8 +8,10 @@ using Climax_trial.Core;
 namespace Climax_trial.MVVM.Model
 {
     //This class is used to initialize database items for expenses
+    
     public class Expenses
     {
+
         public int     Id { get; set; }
         private string _name;
         private string _type;

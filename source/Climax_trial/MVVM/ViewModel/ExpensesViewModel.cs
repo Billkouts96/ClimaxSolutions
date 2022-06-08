@@ -57,18 +57,20 @@ namespace Climax_trial.MVVM.ViewModel
             {
                 if (_expense != null)
                 {
+                    
                     service.AddExpense(_expense);
 
                     //return to default values all the affected fields
                    
                     OnPropertyChanged(nameof(Expense));
                     OnPropertyChanged(nameof(ExpensesSeries));
-                    _expense.Taxfree = 0;
-                    _expense.Price = 0;
-                    _expense.Tax = 0;
                     OnPropertyChanged(nameof(Price));
                     OnPropertyChanged(nameof(TaxFree));
                     OnPropertyChanged(nameof(Tax));
+                    //and now create new service again 
+                    service = Service.GetInstance();
+                    //or just try to set Id to 0 (dummy but works -> intresting workaround)
+                    _expense.Id = 0;
                 }
                 //dont know what is this about
                 //SaveObjectExecute(this);               
